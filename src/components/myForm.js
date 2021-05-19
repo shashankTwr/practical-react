@@ -2,55 +2,43 @@ import React, {Component} from "react";
 
 export default class MyForm extends Component{
   state = {
-    name: '',
-    favouritePet: '',
+    firstName: '',
+    lastName: '',
     rememberMe: '',
     sign: 'Mr'
   }
 
-  handleChange  = event => {
-    console.log(this.state.name);
+  handleChange = (event, fieldName) => {
     this.setState({
-      name: event.target.value
+      [event.target.name]: event.target.value
     });
-  }
-
-  handlePet = event => {
-    this.setState({
-      favouritePet : event.target.value
-    });
-  }
-
-  handleSelect = event =>{
-    this.setState({
-      sign: event.target.value
-    });
-  }
+  };
 
   handleSubmit = event => {
+    event.preventDefault();
     console.log(this.state);
-  }
+  };
 	render() {
 		return (
-			<div>
+      <form onSubmit= {this.handleSubmit}>
         <div>
-          <select value = {this.state.sign} onChange={this.handleSelect}>
+          <select  name= "sign" value = {this.state.sign} onChange={this.handleChange}>
             <option>Miss</option>
             <option>Mrs</option>
             <option>Mr</option>
             <option>Smt</option>
           </select>
-          <input value = {this.state.name} onChange={this.handleChange}></input>
-          <input value = {this.state.favouritePet} onChange={this.handlePet}></input>
+          <input name="firstName" value = {this.state.name} onChange={this.handleChange}></input>
+          <input name="lastName" value = {this.state.lastName} onChange={this.handleChange}></input>
         </div>
 
         <div>
-          <button onClick = {this.handleSubmit}>Submit</button>
+          <button type="submit">Submit</button>
         </div>
-			</div>
+      </form>
 		);
 	};
 }
 
 // making a naive form which contains name and submit option thus submitting the
-//values 
+//values
