@@ -44,7 +44,7 @@ export default class MyForm extends Component{
     if(isValid){
       console.log(this.state);
     }
-    // console.log(this.state);
+    
   };
 	render() {
     console.log(typeof(this.validate))
