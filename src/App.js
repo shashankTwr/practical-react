@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import './App.css';
-import API from "./components/api";
+import TodoList from "./components/list";
 
 
 export default class App extends Component{
@@ -10,7 +10,7 @@ export default class App extends Component{
   render () {
       return (
       <div className="App">
-        <API />
+        <TodoList />
       </div>
 
     );
