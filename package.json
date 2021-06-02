@@ -26,7 +26,6 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
       "not op_mini all"
     ],
     "development": [
@@ -36,6 +35,7 @@
     ]
   },
   "devDependencies": {
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.16",
+    "surge": "^0.23.0"
   }
 }
